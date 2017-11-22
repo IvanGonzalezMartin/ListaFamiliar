@@ -7,4 +7,14 @@ module.exports = function(Listafamiliar) {
         next();
     });
     
+    Listafamiliar.afterRemote('create' , function(context, listafamiliar ,next){
+        var Usuario=Listafamiliar.app.models.Usuario;
+        Usuario.findById(context.req.accessToken.userId, function(err,objeto){
+            objeto.listaFamiliarId=listafamiliar.id;
+            objeto.save(function(err){
+                next();
+            });
+        });      
+    });
+    
 };
