@@ -17,7 +17,7 @@
   },
   "validations": [],
   "relations": {
-    "usuarios": {
+    "Solicitud": {
       "type": "hasAndBelongsToMany",
       "model": "Usuario",
       "foreignKey": ""
@@ -34,5 +34,34 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "prototype.solicitar": {
+      "accepts": [
+        {
+          "arg": "context",
+          "type": "object",
+          "required": true,
+          "description": "objeto",
+          "http": {
+            "source": "context"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "objeto",
+          "type": "object",
+          "root": true,
+          "description": "La solicitud"
+        }
+      ],
+      "description": "Solicitud del usuario",
+      "http": [
+        {
+          "path": "/solicitar",
+          "verb": "post"
+        }
+      ]
+    }
+  }
 }

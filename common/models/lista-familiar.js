@@ -17,4 +17,19 @@ module.exports = function(Listafamiliar) {
         });      
     });
     
+    Listafamiliar.prototype.solicitar = function(context, callback) {
+        var objeto;
+        var usuario=context.req.accessToken.userId;
+        var id=this.id;
+            this.Solicitud.add(usuario, function(err, objeto){              
+                     objeto = {
+                        usuarioId:usuario,
+                        listaFamiliarId:id
+                    };  
+                    callback(null, objeto);
+                });   
+    
 };
+   
+};
+

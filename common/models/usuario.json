@@ -25,7 +25,7 @@
       "model": "ListaFamiliar",
       "foreignKey": ""
     },
-    "listaFamiliars": {
+    "Solicitud": {
       "type": "hasAndBelongsToMany",
       "model": "ListaFamiliar",
       "foreignKey": ""
