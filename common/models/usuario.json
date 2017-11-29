@@ -48,8 +48,37 @@
       "principalType": "ROLE",
       "principalId": "$authenticated",
       "permission": "ALLOW",
-      "property": "create"
+      "property": "Aceptar"
     }
   ],
-  "methods": {}
+  "methods": {
+    "prototype.Aceptar": {
+      "accepts": [
+        {
+          "arg": "context",
+          "type": "object",
+          "required": true,
+          "description": "",
+          "http": {
+            "source": "context"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "objeto",
+          "type": "object",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Aceptar una solicitud",
+      "http": [
+        {
+          "path": "/aceptarSolicitud",
+          "verb": "put"
+        }
+      ]
+    }
+  }
 }
