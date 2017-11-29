@@ -33,5 +33,31 @@ module.exports = function(Usuario) {
     
 });
 };
+/**
+ * rechazarSolicitud
+ * @param {object} context datos
+ * @param {Function(Error, array)} callback
+ */
+
+Usuario.prototype.rechazar = function(context, callback) {
+  var array;
+  var usuario = this;
+  var userid = context.req.accessToken.userId;
+  var lista;
+  Usuario.findById(userid, function(err,usuarioauten) {
+            if (err) callback(err);
+            lista=usuarioauten.listaFamiliarId;
+            
+            usuario.Solicitud.remove(lista, function(err){
+                
+                
+                
+                    Usuario.find({
+                            where:{lista: Usuario.listaFamiliarId}},function (err,array){ 
+                            callback(null, array);                    
+            });
+           });
+});
+};
 }
 

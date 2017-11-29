@@ -49,6 +49,13 @@
       "principalId": "$authenticated",
       "permission": "ALLOW",
       "property": "Aceptar"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "rechazar"
     }
   ],
   "methods": {
@@ -77,6 +84,34 @@
         {
           "path": "/aceptarSolicitud",
           "verb": "put"
+        }
+      ]
+    },
+    "prototype.rechazar": {
+      "accepts": [
+        {
+          "arg": "context",
+          "type": "object",
+          "required": true,
+          "description": "datos",
+          "http": {
+            "source": "context"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "array",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "rechazarSolicitud",
+      "http": [
+        {
+          "path": "/rechazarSolicitud",
+          "verb": "delete"
         }
       ]
     }
