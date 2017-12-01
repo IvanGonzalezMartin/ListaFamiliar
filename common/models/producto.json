@@ -28,5 +28,34 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "limpiarlista": {
+      "accepts": [
+        {
+          "arg": "context",
+          "type": "object",
+          "required": true,
+          "description": "contexto",
+          "http": {
+            "source": "context"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "array",
+          "type": "array",
+          "root": true,
+          "description": "productos limpios"
+        }
+      ],
+      "description": "limpiar lista familiar",
+      "http": [
+        {
+          "path": "/limpiarLista",
+          "verb": "put"
+        }
+      ]
+    }
+  }
 }
