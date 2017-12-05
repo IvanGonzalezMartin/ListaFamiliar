@@ -21,7 +21,7 @@
   },
   "validations": [],
   "relations": {
-    "listaFamiliarId": {
+    "listaFamiliar": {
       "type": "belongsTo",
       "model": "ListaFamiliar",
       "foreignKey": "listaFamiliarId"
@@ -53,6 +53,34 @@
       "http": [
         {
           "path": "/limpiarLista",
+          "verb": "put"
+        }
+      ]
+    },
+    "prototype.EliminarProducto": {
+      "accepts": [
+        {
+          "arg": "context",
+          "type": "object",
+          "required": true,
+          "description": "",
+          "http": {
+            "source": "context"
+          }
+        }
+      ],
+      "returns": [
+        {
+          "arg": "array",
+          "type": "array",
+          "root": true,
+          "description": ""
+        }
+      ],
+      "description": "Comprar un unico producto",
+      "http": [
+        {
+          "path": "/comprado",
           "verb": "put"
         }
       ]
