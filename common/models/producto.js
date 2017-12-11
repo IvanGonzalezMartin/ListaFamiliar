@@ -61,9 +61,8 @@ Producto.prototype.EliminarProducto = function(context, callback) {
                  
                  console.log("no pertenece a la lista");
                  
-             }
-                                       
-            });
+             }                                 
+        });
 };
 
 }
